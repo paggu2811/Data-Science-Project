@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Recognition 🌸</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='wallpaper1.jpg') }}"); 
+            background-size: cover;  
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: white;
+        }
+
+        h2 {
+            background: rgba(0, 0, 0, 0.5); 
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h2>🌼 Flower Classification CNN Model 🌼</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

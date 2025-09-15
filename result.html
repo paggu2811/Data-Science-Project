@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result 🌸</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='wallpaper.jpg') }}"); 
+            /* background image from static folder */
+            background-size: cover;   
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: white;
+        }
+
+        h2, h3, a {
+            background: rgba(0, 0, 0, 0.5); 
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 10px;
+        }
+
+        img {
+            border: 5px solid white;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff69b4;
+            background: rgba(0,0,0,0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        a:hover {
+            color: #fff;
+            background: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h2>🌼 Prediction Result 🌼</h2>
+    <br>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="250"><br><br>
+    <h3>🌸 Predicted Flower: <b>{{ flower }}</b></h3>
+    <h3>🔍 Accuracy: {{ Accuracy }} %</h3>
+    <br>
+    <a href="/">🔙 Try Another Image</a>
+</body>
+</html>
